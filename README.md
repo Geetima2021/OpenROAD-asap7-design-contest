@@ -45,7 +45,9 @@ Here the constraint use is the clock period constraint only and other constraint
 - [Shivani Shah](https://github.com/shivanishah269),Teaching Assistant, VSD Corp. Pvt. Ltd.
 - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
 - [Phillip Guhring](https://github.com/thesourcerer8), Software architect at Libresilicon Association.
-
+- [Sumanta Kar](https://github.com/Eyantra698Sumanto), Senior Project Technical Assistant, IIT Bombay)
+- [Vijayan Krishnan](https://github.com/vijayank88), Senior Application Engineer for OpenROAD Project
+ 
 
 
 
