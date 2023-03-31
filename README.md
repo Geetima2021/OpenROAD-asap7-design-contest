@@ -17,7 +17,7 @@ The first thing done is to increase the swap area to 10GB and the available disk
 ![checkpoint](https://user-images.githubusercontent.com/63381455/229198528-1b5ac5b2-e961-47a1-87be-dfe5d7727d6e.png)
 
 
-DESIGN: rvmyth 
+# DESIGN: rvmyth 
 
 Executed in cloud and the system information is included in the snapshot below.
 
