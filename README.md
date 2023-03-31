@@ -12,4 +12,13 @@ Executed in cloud and the system information is included in the snapshot below.
 
 ![ram_cloud](https://user-images.githubusercontent.com/63381455/229164479-713fb6ce-8679-4bc1-a3be-b07d8a5f006a.png)
 
+The configuration file and the final result obtained is included in the snapshot below
+
+![design_config](https://user-images.githubusercontent.com/63381455/229182847-f79f5900-4989-4534-b156-fce7a5aaaa1a.png)
+
+
+![result](https://user-images.githubusercontent.com/63381455/229182859-74d1681b-93dd-4c2e-b318-938c7277d960.png)
+
+
+
 
