@@ -19,6 +19,11 @@ The configuration file and the final result obtained is included in the snapshot
 
 ![result](https://user-images.githubusercontent.com/63381455/229182859-74d1681b-93dd-4c2e-b318-938c7277d960.png)
 
+The clock network and the final routed image is as shown in the figure
+
+![clk_final_route](https://user-images.githubusercontent.com/63381455/229184329-123e98d0-8241-4874-b723-b4fdc1f363ce.png)
+
+
 
 
 
