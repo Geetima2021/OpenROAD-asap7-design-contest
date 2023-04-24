@@ -1,7 +1,7 @@
 
 # OpenROAD 7nm design contest
 
-In this contest I have used both cloud as well as my local system in exploring available design ibex and other a RISCV based design rvmyth which is built duing the RISCV Myth workshop organised by VSD and its details is available [here](https://github.com/shivanishah269/risc-v-core). 
+This repository gives an insight of my experience in the OpenROAD ASAP7 (7nm) physical design contest organise by VSD and OpenROAD which was held from 15 March 2023 to 31st March 2023. In this contest I have used both cloud as well as my local system in exploring available design ibex and other a RISCV based design rvmyth which is built duing the RISCV Myth workshop organised by VSD and its details is available [here](https://github.com/shivanishah269/risc-v-core). 
 
 The problem statement initially decided is to reduce the runtime of the ibex design based on the given system configuration.
 
