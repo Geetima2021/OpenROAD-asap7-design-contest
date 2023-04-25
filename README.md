@@ -20,16 +20,7 @@ Build locally
 During this stage I have encountered few issues
    a. 
    
-     [!error1](Images/Error/1,png)
-
-
-
-
-
-
-
-
-
+     ![libtcl_issue](Images/Error/libtcl_issue,png)
 
 
 
