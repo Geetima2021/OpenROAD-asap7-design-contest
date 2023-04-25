@@ -1,15 +1,31 @@
 
 # OpenROAD 7nm design contest
 
-This repository gives an insight of my experience in the OpenROAD ASAP7 (7nm) physical design contest organises by VSD and OpenROAD which was held from 15 March 2023 to 31st March 2023. In this contest I have used both cloud as well as my local system in exploring available design ibex and other a RISCV based design rvmyth which is built duing the RISCV Myth workshop organised by VSD and its details is available [here](https://github.com/shivanishah269/risc-v-core). 
+This repository gives an insight of my experience in the OpenROAD ASAP7 (7nm) physical design contest organise by VSD and OpenROAD which was held from 15 March 2023 to 31st March 2023. In this contest I have used both cloud as well as my local system in exploring available design ibex and other a RISCV based design rvmyth which is built duing the RISCV Myth workshop organised by VSD and its details is available [here](https://github.com/shivanishah269/risc-v-core). 
 
 Prior moving ahead towards the contest problem, let me take you along to my installation journey, give you a picture of the issues I encountered and the actions taken to resolve the issues.
 
- My system configuration
+My system configuration
 1. 4 cpu core and 4GB Ram
 2. Ubuntu 18.04
 
-The Openroad tool can be build locally or with a docker. I have build the tool locally. The steps involve in building the tool locally and the issues encountered will be discussed as systematically. For latest build locally steps visit [here](https://openroad-flow-scripts.readthedocs.io/en/latest/user/BuildLocally.html) and using [docker](https://openroad-flow-scripts.readthedocs.io/en/latest/user/BuildWithDocker.html). 
+The Openroad tool can be build locally or with a docker. I have build the tool locally. The steps involve in building the tool locally and the issues faced will be discussed as and when encountered . For latest build locally, visit [here](https://openroad-flow-scripts.readthedocs.io/en/latest/user/BuildLocally.html) and using docker [click](https://openroad-flow-scripts.readthedocs.io/en/latest/user/BuildWithDocker.html). 
+
+Build locally 
+
+1. git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
+2. cd /home/geetima/OpenROAD-flow-scripts/tools/OpenROAD
+3. sudo ./etc/DependencyInstaller.sh
+
+During this stage I have encountered few issues
+   a. 
+   
+     [!error1](Images/Error/1,png)
+
+
+
+
+
 
 
 
