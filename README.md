@@ -20,7 +20,7 @@ Build locally
 During this stage I have encountered few issues
    a. 
    
-     ![libtcl_issue](Images/Error/libtcl_issue,png)
+     ![libtcl_issue](Images/Error/libtcl_issue.png)
 
 
 
