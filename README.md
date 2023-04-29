@@ -16,22 +16,83 @@ Build locally
 1. git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
 2. cd /home/geetima/OpenROAD-flow-scripts/tools/OpenROAD
 3. sudo ./etc/DependencyInstaller.sh
+4. ./build_openroad.sh --local
+During stage 3 and stage 4 stage I faced few issues as discussed below
+5. source setup_env.sh
 
-During this stage I have encountered few issues
-   a. 
+Step 5 is required each time we want to use Openroad and it can be avoided by setting the environment in the .bashrc file.
+
+Stage3 issues
+
+a. The issue as shown in the figure says that "E: package 'libtcl' has no installation candidate 
+
+Steps taken : 
+
+First installed the libtcl8.6 as shown in figure. However the issue persisted. This happens as ubuntu 18.04 has two different version of libtcl 8.5 and 8.6 which result in the issue shown.
+
+The issue was resolve by making slight change in the dependenciesInstaller.sh. We separated the libtcl installation into different apt-get line and also ensured that if libtcl does not work the installation can find the libtcl8.6 and continue with the installation.
    
      ![libtcl_issue](Images/Error/libtcl_issue.png)
 
+b. The next issue as shown in figure below was in cmake download which gets broken and can be due to network connection. 
 
+Steps taken: 
 
+cmake downloaded separately and the issue continued. The first download was broken and whenever it tried instead of overwriting or continuing it renames the cmake file to 2,3 and the final trial is 7. It checks the original download thereafter and hence the issue remained.
 
-The problem statement initially decided is to reduce the runtime of the ibex design based on the given system configuration.
+We decided to change the wget call in the dependenciesInsatller.sh script. I have included the -c (continue) flag whenever wget is use for downloading and the issue resolved. 
+ 
+    ![issue_wget](Images/Error/issue_wget.png)
 
-<!--![sys_info1](https://user-images.githubusercontent.com/63381455/229187714-43f9e318-238a-492f-81ff-61a3a8eec805.png)
+Stage4 issues
 
-![sys_info2](https://user-images.githubusercontent.com/63381455/229187725-62c34ef5-0911-470e-8271-ee89da58d3b7.png)--->
+c. The next issue occurred while executing the build_opneroad.sh which resulted in my system hang and I am completely unable to use my system.
 
-While executing the run for ibex design with the above system configuation detail routing has timing issues as the 0th optimization had taken around 11hrs with 4Gb ram and 6Gb swap area. The aim is to reduce the time taken for the exectuion of ibex design and the other aim is to start the execution from the point the routing [stopped](https://github.com/Geetima2021/OpenROAD-flow-scripts/tree/GeetORFS/docs/contest).
+Steps taken:
+
+My system with 4GB RAM was unable to handle the load while executing the build script of OpenROAD
+
+We first shifted to xfce desktop environment ``apt-get install xfce4``` This did not not help with the issue
+
+Next using the ``top`` command I monitored my system as suggested and we decided to increase the swap area
+
+To increase swap space type in the following commands
+
+```bash sudo dd if=/dev/zero of=/swap_file bs=1GB count=6 ```
+		     
+Now, set the permission access for the users as 600 so users couldn’t be able to read important data from the swap_file:
+
+bash sudo chmod 600 /swap_file```
+		    
+To enable the swap area on the file “swap_file,” use the “mkswap” command utility:
+                      
+```bash sudo mkswap /swap_file```
+
+The next step is to enable the swap file “swap_file” using the command:
+	    
+```bash sudo swapon /swap_file ```
+         
+Each time the system is rebooted the swap_file has to be enable using the above command. Increasing the swap area assisted in completion of OpenROAD build and it was ready to use.
+
+d. The next issue occured while testing the recommended ibex design for PnR flow. As shown in the figure a parsing error is shown. The error is due to clash with the yosys version.
+
+![yosys](/Images/Error/issue_yosys.png)
+
+Steps taken:
+
+The older version of yosys 0.7 is removed and the environment is setup to use the Openroad yosys.
+
+## Complete RTL to GDS flow experience
+
+	Inorder to be familiar with the Openroad flow I implemented``gcd design`` using ``ASAP7`` platform. The design being a simple one was fully executed smoothly within 5min18 sec. Now as the contest requirement ask optimization in run time for anyone of the RISCV based design ``ibex, riscv32i, swerv`` I had chosen ibex and at this point lets check out the problem statement.
+
+### Problem statement
+
+1. To reduce the run time of the ibex design based on a given system configuration
+
+	After the successful build of Openroad I also tried executing the ibex design with default configuration for ASAP7 platform and it was a smooth sailing till the global routing stage. At the detail routing stage the optimization iteration till the 20\% of the 1st iteration had taken 11 hrs for execution and the execution stopped due to system shutdown. My main goal at that point of time was to somehow reduce the time taken for optimization iteration during the detail routing stage. 
+
+The first thing I did was to opt for cloud based labs as my system was performing very slow. In the cloud based system the ibex design with its default configuraion had taken around 1 hr 46 minutes to complete the rtl to gds flow. Next thing we decided to increase the swap area to about 10GB in my local system and the 0th iteratipn did was  Now we tried by increasing the swap area to 10GB with available disk space of 35GB and there was slight inprovement as 
 
 The first thing done is to increase the swap area to 10GB and the available disk space is around 35GB and it has shown much improvement during the detail routing stage and the 0th iteration completed in 04:36:31 time and the 1st iteration till 60% has taken around 10hrs. Later checkpoint is included in the detail_route script and the respective asap7 config files as an additional arguments as shown in the snapshot. The checkpoint is a step forward to work on starting the detail routing stage at the point it stopped which may occur due to shut down of the system. The next step of the work is yet to be completed.
 
@@ -61,7 +122,7 @@ The clock network and the final routed image is as shown in the figure
 
 # Conclusion
 
-Here the constraint use is the clock period constraint only and other constraints is to be included.
+Here the constraint use is the clock period constraint only and other constraints is to be included. I will also try to get a better run time in my system for the available system configuration.
 
 # Acknowledgement
 - [Shivani Shah](https://github.com/shivanishah269),Teaching Assistant, VSD Corp. Pvt. Ltd.
