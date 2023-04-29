@@ -58,7 +58,9 @@ Next using the ``top`` command I monitored my system as suggested and we decided
 
 To increase swap space type in the following commands
 
-```bash sudo dd if=/dev/zero of=/swap_file bs=1GB count=6 ```
+```bash 
+sudo dd if=/dev/zero of=/swap_file bs=1GB count=6 
+```
 		     
 Now, set the permission access for the users as 600 so users couldn’t be able to read important data from the swap_file:
 
@@ -66,11 +68,15 @@ bash sudo chmod 600 /swap_file```
 		    
 To enable the swap area on the file “swap_file,” use the “mkswap” command utility:
                       
-```bash sudo mkswap /swap_file```
+```bash 
+sudo mkswap /swap_file
+```
 
 The next step is to enable the swap file “swap_file” using the command:
 	    
-```bash sudo swapon /swap_file ```
+```bash 
+sudo swapon /swap_file 
+```
          
 Each time the system is rebooted the swap_file has to be enable using the above command. Increasing the swap area assisted in completion of OpenROAD build and it was ready to use.
 
@@ -84,7 +90,7 @@ The older version of yosys 0.7 is removed and the environment is setup to use th
 
 ## Complete RTL to GDS flow experience
 
-	Inorder to be familiar with the Openroad flow I implemented``gcd design`` using ``ASAP7`` platform. The design being a simple one was fully executed smoothly within 5min18 sec. Now as the contest requirement ask optimization in run time for anyone of the RISCV based design ``ibex, riscv32i, swerv`` I had chosen ibex and at this point lets check out the problem statement.
+	Inorder to be familiar with the Openroad flow I implemented gcd design using ASAP7 platform. The design being a simple one was fully executed smoothly within 5min18 sec. Now as the contest requirement ask optimization in run time for anyone of the RISCV based design ``ibex, riscv32i, swerv`` I had chosen ibex and at this point lets check out the problem statement.
 
 ### Problem statement
 
