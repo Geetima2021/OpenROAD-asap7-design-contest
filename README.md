@@ -82,7 +82,7 @@ Each time the system is rebooted the swap_file has to be enable using the above 
 
 d. The next issue occured while testing the recommended ibex design for PnR flow. As shown in the figure a parsing error is shown. The error is due to clash with the yosys version.
 
-![yosys](/Images/Error/issue_yosys.png)
+image
 
 Steps taken:
 
