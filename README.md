@@ -90,19 +90,17 @@ Steps taken:
 
 The older version of yosys 0.7 is removed and the environment is setup to use the Openroad yosys.
 
-## Complete RTL to GDS flow experience
+### Complete RTL to GDS flow experience
 
-	Inorder to be familiar with the Openroad flow I implemented gcd design using ASAP7 platform. The design being a simple one was fully executed smoothly within 5min18 sec. Now as the contest requirement ask optimization in run time for anyone of the RISCV based design ibex, riscv32i, swerv I had chosen ibex and at this point lets check out the problem statement.
+Inorder to be familiar with the Openroad flow I implemented gcd design using ASAP7 platform. The design being a simple one was fully executed smoothly within 5min18 sec. Now as the contest requirement ask optimization in run time for anyone of the RISCV based design ibex, riscv32i, swerv I had chosen ibex and at this point lets check out the problem statement.
 
 ### Problem statement
 
 1. To reduce the run time of the ibex design based on a given system configuration
 
-	After the successful build of Openroad I also tried executing the ibex design with default configuration for ASAP7 platform and it was a smooth sailing till the global routing stage. At the detail routing stage the optimization iteration till the 20\% of the 1st iteration had taken 11 hrs for execution and the execution stopped due to system shutdown. My main goal at that point of time was to somehow reduce the time taken for optimization iteration during the detail routing stage. 
+After the successful build of Openroad I also tried executing the ibex design with default configuration for ASAP7 platform and it was a smooth sailing till the global routing stage. At the detail routing stage the optimization iteration till the 20\% of the 1st iteration had taken 11 hrs for execution and the execution stopped due to system shutdown. My main goal at that point of time was to somehow reduce the time taken for optimization iteration during the detail routing stage. 
 
-The first thing I did was to opt for cloud based labs as my system was performing very slow. In the cloud based system the ibex design with its default configuraion had taken around 1 hr 46 minutes to complete the rtl to gds flow. Next thing we decided to increase the swap area to about 10GB in my local system and the 0th iteratipn did was  Now we tried by increasing the swap area to 10GB with available disk space of 35GB and there was slight inprovement as 
-
-The first thing done is to increase the swap area to 10GB and the available disk space is around 35GB and it has shown much improvement during the detail routing stage and the 0th iteration completed in 04:36:31 time and the 1st iteration till 60% has taken around 10hrs. Later checkpoint is included in the detail_route script and the respective asap7 config files as an additional arguments as shown in the snapshot. The checkpoint is a step forward to work on starting the detail routing stage at the point it stopped which may occur due to shut down of the system. The next step of the work is yet to be completed.
+The first thing I did was to opt for cloud based labs as my system was performing very slow. In the cloud based system the ibex design with its default configuraion had taken around 1 hr 46 minutes to complete the rtl to gds flow. Next thing we decided to increase the swap area to about 10GB B with available disk space of 35GB and there was slight inprovement as during the detail routing stage and the 0th iteration completed in 04:36:31 time and the 1st iteration till 60% has taken around 10hrs. Later checkpoint is included in the detail_route script and the respective asap7 config files as an additional arguments as shown in the snapshot. The checkpoint is a step forward to work on starting the detail routing stage at the point it stopped which may occur due to shut down of the system. The next step of the work is yet to be completed.
 
 
 ![checkpoint](https://user-images.githubusercontent.com/63381455/229198528-1b5ac5b2-e961-47a1-87be-dfe5d7727d6e.png)
