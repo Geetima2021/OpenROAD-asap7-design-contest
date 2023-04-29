@@ -64,7 +64,9 @@ sudo dd if=/dev/zero of=/swap_file bs=1GB count=6
 		     
 Now, set the permission access for the users as 600 so users couldn’t be able to read important data from the swap_file:
 
-bash sudo chmod 600 /swap_file```
+```bash 
+sudo chmod 600 /swap_file
+```
 		    
 To enable the swap area on the file “swap_file,” use the “mkswap” command utility:
                       
