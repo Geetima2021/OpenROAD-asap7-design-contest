@@ -90,7 +90,7 @@ The older version of yosys 0.7 is removed and the environment is setup to use th
 
 ## Complete RTL to GDS flow experience
 
-	Inorder to be familiar with the Openroad flow I implemented gcd design using ASAP7 platform. The design being a simple one was fully executed smoothly within 5min18 sec. Now as the contest requirement ask optimization in run time for anyone of the RISCV based design ``ibex, riscv32i, swerv`` I had chosen ibex and at this point lets check out the problem statement.
+	Inorder to be familiar with the Openroad flow I implemented gcd design using ASAP7 platform. The design being a simple one was fully executed smoothly within 5min18 sec. Now as the contest requirement ask optimization in run time for anyone of the RISCV based design ibex, riscv32i, swerv I had chosen ibex and at this point lets check out the problem statement.
 
 ### Problem statement
 
