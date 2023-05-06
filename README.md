@@ -32,8 +32,8 @@ First installed the libtcl8.6 as shown in figure. However the issue persisted. T
 
 The issue was resolve by making slight change in the dependenciesInstaller.sh. We separated the libtcl installation into different apt-get line and also ensured that if libtcl does not work the installation can find the libtcl8.6 and continue with the installation.
    
-    ![libtcl_issue](https://user-images.githubusercontent.com/63381455/236629557-6639a12a-1e89-4853-8e64-116ead9b8330.png)
-
+![libtcl_issue](https://user-images.githubusercontent.com/63381455/236629557-6639a12a-1e89-4853-8e64-116ead9b8330.png)
+![libtcl_issue](Images/Error/libtcl_issue.png)
 
 b. The next issue as shown in figure below was in cmake download which gets broken and can be due to network connection. 
 
@@ -43,7 +43,7 @@ cmake downloaded separately and the issue continued. The first download was brok
 
 We decided to change the wget call in the dependenciesInsatller.sh script. I have included the -c (continue) flag whenever wget is use for downloading and the issue resolved. 
  
-    ![issue_wget](https://user-images.githubusercontent.com/63381455/236629569-ab316570-482f-4391-af34-4afb7dbf8ac5.png)
+![issue_wget](https://user-images.githubusercontent.com/63381455/236629569-ab316570-482f-4391-af34-4afb7dbf8ac5.png)
 
 
 Stage4 issues
