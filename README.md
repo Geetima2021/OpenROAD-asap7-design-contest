@@ -87,7 +87,6 @@ d. The next issue occured while testing the recommended ibex design for PnR flow
 
 ![yosys_error](Images/Error/yosys_error.png)
 
-
 Steps taken:
 
 The older version of yosys 0.7 is removed and the environment is setup to use the Openroad yosys.
